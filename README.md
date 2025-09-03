@@ -1,35 +1,4 @@
 # didactic-winner
-import random
-from typing import Dict, List, Tuple, Optional
-
-"""
-Aplikacja testująca walkę (wersja bez input())
-------------------------------------------------
-Problem: w środowisku sandbox "input()" powoduje OSError: [Errno 29] I/O error.
-Rozwiązanie: całkowicie usuwam interakcję wejściową i zastępuję ją
-parametryzowanymi funkcjami + deterministycznym demo oraz testami.
-
-Zasady (zgodne z opisem):
-1) Statystyki: Siła, Zręczność, Spostrzegawczość, Magia, Charyzma.
-   Losujemy 5 rzutów k6 i dodajemy modyfikatory: [+2, +1, 0, -1, -2].
-   Gracz normalnie przypisuje wartości do statystyk; tutaj robimy to
-   automatycznie (lub przez podanie mapy assignment).
-
-2) Trafienie: rzut k20 + wartość odpowiedniej statystyki (Siła dla miecza,
-   Spostrzegawczość dla łuku, Magia dla kija). Udane, gdy >= obrona celu.
-
-3) Obrażenia przy trafieniu:
-   - Miecz krótki: k6 + modyfikator(Siła)
-   - Łuk:         k6 + modyfikator(Spostrzegawczość)
-   - Kij magiczny: k4 + modyfikator(Magia)
-
-4) Modyfikator ze statystyki:
-   -1 -> 0; 0 -> 0; 1 -> 0;
-   2..4 -> 1; 5..7 -> 2; 8..10 -> 3; >=11 -> 4
-
-5) Pancerz odejmuje się od otrzymanych obrażeń. Minimum 0.
-"""
-
 STATS: List[str] = ["Siła", "Zręczność", "Spostrzegawczość", "Magia", "Charyzma"]
 ASSIGN_ORDER_DEFAULT: List[str] = ["Siła", "Spostrzegawczość", "Magia", "Zręczność", "Charyzma"]
 
