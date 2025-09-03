@@ -212,9 +212,3 @@ def run_tests() -> None:
 
     print("Wszystkie testy: OK ✅")
 
-
-if __name__ == "__main__":
-    # Uruchom testy i demo referencyjne
-    run_tests()
-    print("\n--- DEMO (deterministyczne) ---")
-    demo(seed=123)
